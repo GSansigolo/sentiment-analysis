@@ -1,18 +1,19 @@
 ## Data Mining Twitter Lava Jato Matplotlib
-Prototipo de Web Service para visualização de dados, sistema desenvolvido em Java com biblioteca Spring, REST Framework e Hibernate consumindo dados via PostgreSQL.
+Código em Python para mineração de dados no Twitter com texto "Lava Jato" com armazenamento mongoDB e exibição dos dados via MatPlotLib 
 
-### Tecnologias usadas:
+### Imports:
 
-* Spring Boot;
-* Spring Web;
-* Spring Data;
-* PostgreSQL database;
-* Hibernate;
-* Spring Security
+import pymongo
+from pymongo import MongoClient
+import json
+import twitter
+from pprint import pprint
+
 
 ### Para executar
-O primeiro passo para executar o projeto é colocar o banco de dados no seu postgres, para isso restaure o backup, o mesmo se encontra dentro da pasta "/db", é o arquivo de nome "backup_banco.backup".
+O primeiro passo para executar o projeto é colocar o banco de dados no seu MongoDB, para isso 
+
 
 ```bash
-mvn spring-boot:run
+python Data-Mining-Twitter-Lava-Jato-Matplotlib.py
 ```
