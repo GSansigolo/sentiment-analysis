@@ -33,12 +33,8 @@ print (len(user_cursor))
 for document in tweet_cursor:
     try:
         print ('----')
-#         pprint (document)
- 
-  
         print ('name:', document["user"]["name"])
         print ('text:', document["text"])
     except:
         print ("***error in encoding")
         pass
-         

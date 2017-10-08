@@ -28,7 +28,7 @@ twitter_api = twitter.Twitter(auth=auth)
 connect mongodb database
 '''
 client = MongoClient()
-db = client.tweet_db_1
+db = client.tweet_db
 tweet_collection = db.tweet_collection
 tweet_collection.create_index([("id", pymongo.ASCENDING)],unique = True) # make sure the collected tweets are unique
 
