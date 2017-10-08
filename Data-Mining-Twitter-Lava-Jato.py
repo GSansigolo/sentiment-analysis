@@ -28,7 +28,7 @@ twitter_api = twitter.Twitter(auth=auth)
 connect mongodb database
 '''
 client = MongoClient()
-db = client.tweet_db
+db = client.tweet_db_1
 tweet_collection = db.tweet_collection
 tweet_collection.create_index([("id", pymongo.ASCENDING)],unique = True) # make sure the collected tweets are unique
 
@@ -38,10 +38,10 @@ define query in REST API
  
 count = 100
 
-geocode = "-84.56,33.62,50mi"
+'''geocode = "-84.56,33.62,50mi"'''
 
  
-q = "election"
+q = "lava jato"
   
 '''
 fetch data
@@ -93,7 +93,7 @@ while(since_id_new != since_id_old):
 
 '''
 query collected data in MongoDB
-'''
+
  
 tweet_cursor = tweet_collection.find()
   
@@ -116,4 +116,4 @@ for document in tweet_cursor:
     except:
         print ("***error in encoding")
         pass
-         
+'''    
