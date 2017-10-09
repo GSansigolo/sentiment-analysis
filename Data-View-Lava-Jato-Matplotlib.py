@@ -91,19 +91,6 @@ print ('----')
 print(number_tweet_pos, number_tweet_neg)
 
 
-#Pizza Pie
-labels = 'Tweets Positivo','Tweets Negativo'
-
-sizes = [number_tweet_pos, number_tweet_neg]
-
-fig1, ax1 = plt.subplots()
-
-ax1.set_title('Análise Sentimental dos Tweets (Lava Jato)')
-
-ax1.pie(sizes, labels=labels, autopct='%1.2f%%',
-        shadow=True, startangle=90, colors=['gold', 'lightskyblue'])
-
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-plt.show()
-
+'''
+colocar aqui o matplotlib
+'''
