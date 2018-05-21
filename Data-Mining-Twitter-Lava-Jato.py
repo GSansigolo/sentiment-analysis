@@ -1,9 +1,6 @@
 '''
-Created on Oct 21, 2016
 Edited on Oct 05, 2017
-@author: Xuebin Wei
 @edited by: g_sansigolo
-@website: www.lbsocial.net
 '''
 
 import pymongo
