@@ -1,6 +1,6 @@
 '''
-Edited on Oct 05, 2017
-@edited by: g_sansigolo
+Created on Oct 05, 2017
+Author: @G_Sansigolo
 '''
 
 import pymongo
@@ -13,10 +13,10 @@ from pprint import pprint
 OAUTH
 '''
 
-CONSUMER_KEY      = "" # fill your oauth
-CONSUMER_SECRET   = "" # fill your oauth
-OAUTH_TOKEN       = "" # fill your oauth
-OATH_TOKEN_SECRET = "" # fill your oauth
+CONSUMER_KEY      = "" 
+CONSUMER_SECRET   = "" 
+OAUTH_TOKEN       = "" 
+OATH_TOKEN_SECRET = ""
 
 auth = twitter.oauth.OAuth(OAUTH_TOKEN,OATH_TOKEN_SECRET,CONSUMER_KEY,CONSUMER_SECRET)
 twitter_api = twitter.Twitter(auth=auth)
@@ -24,10 +24,11 @@ twitter_api = twitter.Twitter(auth=auth)
 '''
 connect mongodb database
 '''
+
 client = MongoClient()
 db = client.tweet_db_1
 tweet_collection = db.tweet_collection
-tweet_collection.create_index([("id", pymongo.ASCENDING)],unique = True) # make sure the collected tweets are unique
+tweet_collection.create_index([("id", pymongo.ASCENDING)],unique = True) 
 
 '''
 define query in REST API
@@ -35,7 +36,7 @@ define query in REST API
  
 count = 100
 
-'''geocode = "-84.56,33.62,50mi"'''
+#geocode = "-84.56,33.62,50mi
 
  
 q = "lava jato"
@@ -43,9 +44,9 @@ q = "lava jato"
 '''
 fetch data
 '''
-  
+
 search_results = twitter_api.search.tweets( count=count,q=q)
-# pprint(search_results['search_metadata'])
+#pprint(search_results['search_metadata'])
          
 statuses = search_results["statuses"]
 
@@ -56,12 +57,11 @@ for statuse in statuses:
    
     try:
         tweet_collection.insert(statuse)
-#         pprint(statuse['created_at'])
+	#pprint(statuse['created_at'])
   
     except:
         pass
         
-
 
 '''
 continue fetching previous data with the same query
@@ -69,7 +69,7 @@ YOU WILL REACH YOUR RATE LIMIT VERY FAST
 '''   
 since_id_old = 0
 while(since_id_new != since_id_old):
-#     pprint(search_results['search_metadata'])
+    #pprint(search_results['search_metadata'])
     since_id_old = since_id_new
     search_results = twitter_api.search.tweets( count=count,q=q, max_id= since_id_new)
     statuses = search_results["statuses"]
@@ -80,14 +80,10 @@ while(since_id_new != since_id_old):
                 
         try:
             tweet_collection.insert(statuse)
-#             pprint(statuse['created_at'])
+	    #pprint(statuse['created_at'])
         except:
             pass
-#         
  
- 
- 
-
 '''
 query collected data in MongoDB
 
