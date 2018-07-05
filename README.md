@@ -6,5 +6,6 @@ Código em Python para mineração de dados no Twitter usando palavras chaves, c
 
 ```bash
 python Data-Mining.py
-Sentiment-Analysis.py
+
+python Sentiment-Analysis.py
 ```
